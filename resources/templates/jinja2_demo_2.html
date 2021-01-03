@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jinja2-demo-2</title>
+</head>
+<body>
+<title>{{title}}</title>
+<div class="card">
+    <div class="card-title">
+        <span style="color: #ffffff; font-size: 28px; font-weight: 700">{{title}}</span>
+    </div>
+    <div class="card-content">
+        <div>最终结果：{{ status }}</div>
+        <div>发布日期：{{ created_when }}</div>
+    </div>
+</div>
+<br>
+
+<table class="pure-table pure-table-bordered">
+    <thead>
+    <tr>
+        <th>INDEX</th>
+        <th>STATUS</th>
+        <th>MESSAGE</th>
+        <th>CREATED_WHEN</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    {% for item in details %}
+    <tr class="{{ loop.cycle('odd', 'even') }}">
+        <td>{{item.index}}</td>
+        <td>{{item.status}}</td>
+        <td>{{item.message}}</td>
+        <td>{{item.created_when}}</td>
+    </tr>
+    {% else %}
+    <tr>
+        <td>no data found</td>
+        <td>no data found</td>
+        <td>no data found</td>
+        <td>no data found</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>
+<style type="text/css">
+    .odd {
+
+    }
+
+    .even {
+        background-color: #F5F5F5;
+    }
+
+    .card-title {
+        -moz-border-bottom-colors: none;
+        -moz-border-left-colors: none;
+        -moz-border-right-colors: none;
+        -moz-border-top-colors: none;
+        background-color: #B0C4DE;
+        border-color: #e7eaec;
+        -webkit-border-image: none;
+        -o-border-image: none;
+        border-image: none;
+        border-style: solid solid none;
+        border-width: 4px 0 0;
+        color: inherit;
+        margin-bottom: 0;
+        padding: 14px 15px 7px;
+        min-height: 48px;
+    }
+
+    .card-content {
+        background-color: #fff;
+        color: inherit;
+        padding: 15px 20px 20px;
+        border-color: #e7eaec;
+        -webkit-border-image: none;
+        -o-border-image: none;
+        border-image: none;
+        border-style: solid solid none;
+        border-width: 1px 0
+    }
+
+    .card-content div {
+        padding: 6px;
+    }
+
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+        text-align: left;
+    }
+
+    html {
+        font-family: sans-serif;
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+        margin: 10px;
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    td,th {
+        padding: 0;
+    }
+
+    .pure-table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        empty-cells: show;
+        border: 1px solid #cbcbcb;
+    }
+
+    .pure-table caption {
+        color: #000;
+        font: italic 85%/1 arial,sans-serif;
+        padding: 1em 0;
+        text-align: center;
+    }
+
+    .pure-table td,.pure-table th {
+        border-left: 1px solid #cbcbcb;
+        border-width: 0 0 0 1px;
+        font-size: inherit;
+        margin: 0;
+        overflow: visible;
+        padding: .5em 1em;
+    }
+
+    .pure-table thead {
+        background-color: #00BFFF;
+        color: #000;
+        text-align: left;
+        vertical-align: bottom;
+    }
+
+    .pure-table td {
+        background-color: transparent;
+    }
+
+    .pure-table-bordered td {
+        border-bottom: 1px solid #cbcbcb;
+    }
+
+    .pure-table-bordered tbody>tr:last-child>td {
+        border-bottom-width: 0;
+    }
+</style>

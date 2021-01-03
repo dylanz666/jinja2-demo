@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jinja2-demo-1</title>
+</head>
+<body>
+<table border="1">
+    <thead>
+    <tr>
+        <th>INDEX</th>
+        <th>STATUS</th>
+        <th>MESSAGE</th>
+        <th>CREATED_WHEN</th>
+    </tr>
+    </thead>
+
+    {#这是一个注释#}
+    <tbody>
+    {% if index==1 %}
+    <tr>
+        <td>{{index}}</td>
+        <td>{{status}}</td>
+        <td>{{message}}</td>
+        <td>{{created_when}}</td>
+    </tr>
+    {% elif index==2 %}
+    <tr>
+        <td>{{index}}</td>
+        <td>{{status}}</td>
+    </tr>
+    {% else %}
+    <tr>
+        <td>{{index}}</td>
+        <td>{{status}}</td>
+        <td>{{message}}</td>
+    </tr>
+    {% endif %}
+    </tbody>
+</table>
+</body>
+</html>
