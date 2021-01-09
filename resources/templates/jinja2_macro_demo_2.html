@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% from 'macros/macro_demo.html' import input %}
+
+Username:<p>{{ input('username',value=user_name) }}</p>
+Password:<p>{{ input('password', type='password',value=pass_word) }}</p>
+</body>
+</html>

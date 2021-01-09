@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div>这被继承的父模板</div>
+{% block content %}
+<div>这里是预留位置</div>
+{% endblock %}
+
+<div>
+父模板中再次使用预留位置的内容：
+{{self.content()}}
+</div>
+
+</body>
+</html>

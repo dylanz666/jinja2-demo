@@ -1,0 +1,3 @@
+{% macro input(id, type='text', value='') %}
+<input type="{{ type }}" id="{{ id }}" value="{{ value|e }}">
+{% endmacro %}
